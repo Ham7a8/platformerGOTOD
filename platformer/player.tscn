@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://da45q52esljy5"]
+
+[ext_resource type="Script" path="res://player.gd" id="1_63ttc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g5van"]
+size = Vector2(60, 60)
+
+[node name="Player" type="CharacterBody2D"]
+position = Vector2(-30, -30)
+slide_on_ceiling = false
+floor_constant_speed = true
+floor_block_on_wall = false
+floor_snap_length = 2.0
+script = ExtResource("1_63ttc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(30, 30)
+shape = SubResource("RectangleShape2D_g5van")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 60.0
+offset_bottom = 60.0
